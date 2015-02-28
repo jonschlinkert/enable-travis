@@ -1,0 +1,46 @@
+{
+  "name": "enable-travis",
+  "description": "CLI to enable Travis CI for a node.js project.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/enable-travis",
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jonschlinkert/enable-travis.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/enable-travis/issues"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/jonschlinkert/enable-travis/blob/master/LICENSE"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "deps": "./cli.js"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "git-repo-name": "^0.3.1",
+    "git-user-name": "^1.0.1",
+    "git-username": "^0.4.0",
+    "inquirer": "^0.8.0",
+    "load-pkg": "^1.0.0",
+    "log-symbols": "^1.0.2",
+    "travis-ci": "^2.0.3"
+  }
+}
