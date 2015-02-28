@@ -18,7 +18,11 @@ var enable = require('./');
 
 run(function (env) {
   enable(env.repo, env, function (err, res) {
-    if (err) throw(err);
+    if (err) {
+      console.log(chalk.yellow('Oops! Travis doesn\'t seem know about this project yet.'));
+      console.log(chalk.yellow('Check to make sure your projects are up-to-date.'));
+      process.exit(0);
+    }
     if (res && res.result) {
       symbol.success + ' ' + console.log(chalk.green(env.repo, 'has been enabled!'));
     }
