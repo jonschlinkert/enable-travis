@@ -1,7 +1,7 @@
 {
   "name": "enable-travis",
   "description": "CLI to enable Travis CI for a node.js project.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/jonschlinkert/enable-travis",
   "author": {
     "name": "Jon Schlinkert",
@@ -25,7 +25,7 @@
   "main": "index.js",
   "preferGlobal": true,
   "bin": {
-    "deps": "./cli.js"
+    "enable-travis": "./cli.js"
   },
   "engines": {
     "node": ">=0.10.0"
