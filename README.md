@@ -2,6 +2,10 @@
 
 > CLI to enable Travis CI for a node.js project.
 
+### HEADS UP!
+
+Travis can only enable a project it knows about, so you're repos need to be up-to-date on travis. I know this is a limitation, I'm working on a solution to synchronize so this won't be an issue.
+
 ## Install globally with [npm](npmjs.org):
 
 ```bash
