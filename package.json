@@ -1,46 +1,50 @@
 {
   "name": "enable-travis",
   "description": "CLI to enable Travis CI for a node.js project.",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "homepage": "https://github.com/jonschlinkert/enable-travis",
-  "author": {
-    "name": "Jon Schlinkert",
-    "url": "https://github.com/jonschlinkert"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/jonschlinkert/enable-travis.git"
-  },
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/enable-travis",
   "bugs": {
     "url": "https://github.com/jonschlinkert/enable-travis/issues"
   },
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/jonschlinkert/enable-travis/blob/master/LICENSE"
-  },
+  "license": "MIT",
   "files": [
     "index.js",
     "cli.js"
   ],
   "main": "index.js",
-  "preferGlobal": true,
-  "bin": {
-    "enable-travis": "./cli.js"
-  },
   "engines": {
     "node": ">=0.10.0"
   },
   "scripts": {
     "test": "mocha"
   },
+  "preferGlobal": true,
+  "bin": {
+    "enable-travis": "./cli.js"
+  },
   "dependencies": {
-    "chalk": "^1.0.0",
-    "git-repo-name": "^0.3.1",
-    "git-user-name": "^1.0.1",
+    "chalk": "^1.1.1",
+    "data-store": "^0.12.0",
+    "git-repo-name": "^0.5.0",
+    "git-user-name": "^1.1.2",
     "git-username": "^0.4.0",
-    "inquirer": "^0.8.0",
-    "load-pkg": "^1.0.0",
+    "inquirer": "^0.11.0",
+    "load-pkg": "^2.0.1",
     "log-symbols": "^1.0.2",
+    "minimist": "^1.2.0",
     "travis-ci": "^2.0.3"
+  },
+  "keywords": [
+    "enable",
+    "travis"
+  ],
+  "verb": {
+    "related": {
+      "list": [
+        "sync-travis"
+      ]
+    }
   }
 }
