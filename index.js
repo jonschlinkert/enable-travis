@@ -19,12 +19,17 @@ module.exports = enable;
  * Enable a travis project
  */
 
-function enable(env, cb) {
-  var travis = new Travis({version: '2.0.0'});
-  env = env || {};
+function enable(options, cb) {
+  options = options || {};
+  var travis = new Travis({
+    version: '2.0.0',
+    // user-agent needs to start with "Travis"
+    // https://github.com/travis-ci/travis-ci/issues/5649
+    headers: {'user-agent': 'Travis: jonschlinkert/enable-travis'}
+  });
 
   travis.auth.github.post({
-    github_token: env.GITHUB_OAUTH_TOKEN
+    github_token: options.GITHUB_OAUTH_TOKEN
   }, function(err, res) {
     if (err) return cb(err);
 
@@ -33,7 +38,7 @@ function enable(env, cb) {
     }, function(err) {
 
       if (err) return cb(err);
-      var segs = env.repo.split('/');
+      var segs = options.repo.split('/');
 
       travis.repos(segs[0], segs[1]).get(function(err, res) {
         if (err) return cb(err);

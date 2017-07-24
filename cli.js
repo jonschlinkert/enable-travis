@@ -33,8 +33,8 @@ var token = store.get('GITHUB_OAUTH_TOKEN');
 var repository = repo.sync() || pkg && pkg.name;
 var enable = require('./');
 
-run(function (env) {
-  enable(env, function (err, res) {
+run(function (options) {
+  enable(options, function (err, res) {
     if (err) {
       console.log(err);
       console.log(log.yellow('Oops! Travis doesn\'t seem know about this project yet.'));
@@ -43,7 +43,7 @@ run(function (env) {
       process.exit(0);
     }
     if (res && res.result) {
-      console.log(log.symbol.success + ' ' + log.green(env.repo), 'has been enabled!');
+      console.log(log.symbol.success + ' ' + log.green(options.repo), 'has been enabled!');
     }
   });
 });
