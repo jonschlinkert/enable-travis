@@ -10,19 +10,19 @@
   },
   "license": "MIT",
   "files": [
-    "index.js",
-    "cli.js"
+    "cli.js",
+    "index.js"
   ],
   "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "enable-travis": "./cli.js"
+  },
   "engines": {
     "node": ">=0.10.0"
   },
   "scripts": {
     "test": "mocha"
-  },
-  "preferGlobal": true,
-  "bin": {
-    "enable-travis": "./cli.js"
   },
   "dependencies": {
     "chalk": "^1.1.1",
@@ -45,6 +45,20 @@
       "list": [
         "sync-travis"
       ]
+    },
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
     }
+  },
+  "devDependencies": {
+    "gulp-format-md": "^1.0.0"
   }
 }
