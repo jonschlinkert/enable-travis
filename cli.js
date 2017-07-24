@@ -29,7 +29,7 @@ var pkg = require('load-pkg');
 var username = name() || user() || store.get('username');
 // var password = store.get('password');
 var token = store.get('GITHUB_OAUTH_TOKEN');
-var repository = repo() || pkg && pkg.name;
+var repository = repo.sync() || pkg && pkg.name;
 var enable = require('./');
 
 
@@ -90,7 +90,7 @@ function run(cb) {
       }
     }
 
-    if(answers) {
+    if (answers) {
       if (answers.repo && answers.repo.indexOf('/') === -1) {
         console.log(chalk.red('github repo must be in the form of `owner/repo'));
         process.exit(1);
