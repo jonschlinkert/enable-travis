@@ -1,7 +1,7 @@
 {
   "name": "enable-travis",
   "description": "CLI to enable Travis CI for a node.js project.",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/jonschlinkert/enable-travis",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "jonschlinkert/enable-travis",
@@ -19,7 +19,7 @@
     "enable-travis": "./cli.js"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4.0"
   },
   "scripts": {
     "test": "mocha"
