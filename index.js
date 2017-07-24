@@ -25,23 +25,23 @@ function enable(env, cb) {
 
   travis.auth.github.post({
     github_token: env.GITHUB_OAUTH_TOKEN
-  }, function (err, res) {
+  }, function(err, res) {
     if (err) return cb(err);
 
     travis.authenticate({
       access_token: res.access_token
-    }, function (err) {
+    }, function(err) {
 
       if (err) return cb(err);
       var segs = env.repo.split('/');
 
-      travis.repos(segs[0], segs[1]).get(function (err, res) {
+      travis.repos(segs[0], segs[1]).get(function(err, res) {
         if (err) return cb(err);
 
         travis.hooks(res.repo && res.repo.id).put({
           hook: {active: true}
 
-        }, function (err, content) {
+        }, function(err, content) {
           if (err) return cb(err);
           cb(null, content);
         });
