@@ -10,6 +10,14 @@ Install with [npm](https://www.npmjs.com/):
 $ npm install --save enable-travis
 ```
 
+Install with [yarn](https://yarnpkg.com):
+
+```sh
+$ yarn add enable-travis
+```
+
+Wrapper around [travis-ci](https://github.com/pwmckenna/node-travis-ci) to simplify enabling Travis CI for a project.
+
 ### HEADS UP!
 
 Travis can only enable a project it knows about. If necessary, use [sync-travis](https://github.com/jonschlinkert/sync-travis) to sync your latest GitHub projects first.
@@ -49,8 +57,8 @@ $ npm install --save enable-travis
 ```js
 var enable = require('enable-travis');
 
-var auth = {username: '', password: ''};
-enable('foo/bar', auth, function (err, res) {
+var options = {repo: 'foo/bar', username: 'foo', GITHUB_OAUTH_TOKEN: 'XXXXXX'};
+enable(options, function (err, res) {
   console.log(res);
   //=> { result: true }
 });

@@ -56,7 +56,11 @@
     ],
     "lint": {
       "reflinks": true
-    }
+    },
+    "reflinks": [
+      "sync-travis",
+      "travis-ci"
+    ]
   },
   "devDependencies": {
     "gulp-format-md": "^1.0.0"
